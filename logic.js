@@ -24,7 +24,7 @@ for (let i = array.length - 1; i >= 0; i--) {
 
 
 
-const array = ["jenish", "jagat","abc", ["jaymeen",null, "mihir"], null, undefined,[]];
+const array = ["jenish", "jagat","abc", ["jaymeen",null, "mihir","jay"], null, undefined,[]];
 console.log("Main Array:-", array)
 
 
@@ -34,32 +34,38 @@ function RA(a) {
     const reA = [];
 
     for (let i = a.length - 1; i >= 0; i--) {
+        //if array is array
+        if (Array.isArray(a[i])) {
+			let narra = RA(a[i]);
+			reA.push(narra);
+		} else {
             let reS = RS(a[i]);
             reA.push(reS);
+        }
     }
     return reA;
 }
 //  reverse string
 function RS(s) {
     let reS = [];
-    let reAarry = [];
+    const reAarry = [];
     if (s == null) {
-        if (s == undefined) {
+        /* if (s == undefined) {
             if (s == []) {
                 return s; 
             }
             return s;
-        }
+        } */
         return s;
     } else {
         for (let i = s.length - 1; i >= 0; i--) {
             reS += s[i];
             reAarry.push(reS);
         }
-        //console.log("revers array main:-", reAarry);
+        //console.log("revers string :-", reS);//only revesre string index one by one
         return reS;
         
     }
 }
-//console.log("revers array:-", RS(array));
-console.log("revers ALL:-", RA(array));
+console.log("revers only array:-", RS(array));//only revesre main array not revers his string
+console.log("revers ALL:-", RA(array));//revesre array and inside string
