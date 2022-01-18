@@ -25,7 +25,16 @@ for (let i = array.length - 1; i >= 0; i--) {
 
 
 const array = ["jenish", "jagat","abc", ["jaymeen",null, "mihir","jay"], null, undefined,[]];
+
+//take value from user
+/* const array = [];
+
 console.log("Main Array:-", array)
+for(let g=0; g<=2; g++){
+    array[g]= prompt("Enter Array:-");
+    array.push([g]);
+}
+console.log(array); */
 
 
 
@@ -62,7 +71,7 @@ function RS(s) {
             reS += s[i];
             reAarry.push(reS);
         }
-        //console.log("revers string :-", reS);//only revesre string index one by one
+        //console.log("revers string :-", reS);//only revesre string  one by one
         return reS;
         
     }
